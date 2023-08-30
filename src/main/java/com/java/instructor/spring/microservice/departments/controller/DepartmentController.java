@@ -1,5 +1,7 @@
 package com.java.instructor.spring.microservice.departments.controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +17,7 @@ import com.java.instructor.spring.microservice.departments.service.DepartmentSer
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("api/departments")
+@RequestMapping("departments")
 @AllArgsConstructor
 public class DepartmentController {
 
@@ -31,5 +33,10 @@ public class DepartmentController {
 	public ResponseEntity<Department> getDepartmentById(@PathVariable("id") Long departmentId) {
 		Department department = departmentService.getDepartmentById(departmentId);
 		return ResponseEntity.ok(department);
+	}
+	@GetMapping("/all")
+	public ResponseEntity<List<Department>> getAllDepartments() {
+		List<Department> departments = departmentService.getAllDepartments();
+		return ResponseEntity.ok(departments);
 	}
 }

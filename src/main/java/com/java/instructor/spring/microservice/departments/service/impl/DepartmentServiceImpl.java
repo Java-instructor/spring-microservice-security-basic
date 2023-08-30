@@ -1,5 +1,7 @@
 package com.java.instructor.spring.microservice.departments.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.java.instructor.spring.microservice.departments.entity.Department;
@@ -22,5 +24,8 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 	public Department getDepartmentById(Long departmentId) {
 		return departmentRepository.findById(departmentId).get();
+	}
+	public List<Department> getAllDepartments() {
+		return departmentRepository.findAll();
 	}
 }

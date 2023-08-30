@@ -1,4 +1,4 @@
-package com.java.instructor.spring.microservice.security.basic;
+package com.java.instructor.spring.microservice;
 
 import javax.sql.DataSource;
 
@@ -10,10 +10,10 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 @SpringBootApplication
-public class SpringSecurityBasic {
+public class SpringSecurityBasicMain {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringSecurityBasic.class, args);
+		SpringApplication.run(SpringSecurityBasicMain.class, args);
 	}
 
 	@Bean
