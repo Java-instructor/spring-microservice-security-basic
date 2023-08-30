@@ -40,4 +40,9 @@ public class DepartmentController {
 		List<Department> departments = departmentService.getAllDepartments();
 		return ResponseEntity.ok(departments);
 	}
+	@GetMapping("/test")
+	public ResponseEntity<String> getTest() {
+	
+		return ResponseEntity.ok("Hello test ");
+	}
 }
