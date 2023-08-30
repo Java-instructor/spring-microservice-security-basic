@@ -34,6 +34,7 @@ public class DepartmentController {
 		Department department = departmentService.getDepartmentById(departmentId);
 		return ResponseEntity.ok(department);
 	}
+
 	@GetMapping("/all")
 	public ResponseEntity<List<Department>> getAllDepartments() {
 		List<Department> departments = departmentService.getAllDepartments();
