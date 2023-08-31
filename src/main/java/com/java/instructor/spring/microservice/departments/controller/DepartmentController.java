@@ -16,6 +16,11 @@ import com.java.instructor.spring.microservice.departments.service.DepartmentSer
 
 import lombok.AllArgsConstructor;
 
+
+/**
+ * @author Java-Instructor
+ *
+ */
 @RestController
 @RequestMapping("departments")
 @AllArgsConstructor
@@ -36,6 +41,7 @@ public class DepartmentController {
 	}
 
 	@GetMapping("/all")
+	//@PreAuthorize("hasAuthority('ROLE_INSTRUCTOR')") // method level security 
 	public ResponseEntity<List<Department>> getAllDepartments() {
 		List<Department> departments = departmentService.getAllDepartments();
 		return ResponseEntity.ok(departments);
